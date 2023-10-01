@@ -4,64 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REMEMBER ME</title>
+    <title>Remember Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
     <nav>
-        <button>Memorial</button>
-        <button>Stories</button>
-        <button>Pictures</button>
-        <button>Videos</button>
-        <button>Songs</button>
-        <input type="text" placeholder="Name">
-        <button>Search</button>
+        <div class="left">   
+            <a href="#"><img class="icon-home" src="images/homepage.png"></a>
+        </div>
+        <div class="right">
+            <div class="right_item"><a href="#">Memorial</a></div>
+            <div class="right_item"><a href="#">Story</a></div>
+            <div class="right_item"><a href="#">Picture wall</a></div>
+            <div class="right_item"><a href="#">Videos</a></div>
+            <div class="right_item"><a href="#">Songs</a></div>
+            <input class="right_item" type="text" placeholder="Name">
+            <button>Search</button>
+        </div>
     </nav>
 
-    <main>
-        <h1>REMEMBER ME</h1>
-        <p>Remember me
-            <br>Though I have to say goodbye
-            <br>Remember me
-            <br>Don't let it make you cry
-            <br>For even if I'm far away I hold you in my heart
-            <br>I sing a secret song to you each night we are apart              
-            <br>Remember me
-            <br>Though I have to travel far
-            <br>Remember me
-            <br>Each time you hear a sad guitar
-            <br>Know that I'm with you the only way that I can be
-            <br>Until you're in my arms again
-            <br>Remember me
-        </p>
+    <main class="container">
+        <div class="box">
+            <h1>Remember Me</h1>
+            <p>Remember me
+                <br>Though I have to say goodbye
+                <br>Remember me
+                <br>Don't let it make you cry
+                <br>For even if I'm far away I hold you in my heart
+                <br>I sing a secret song to you each night we are apart              
+                <br>Remember me
+                <br>Though I have to travel far
+                <br>Remember me
+                <br>Each time you hear a sad guitar
+                <br>Know that I'm with you the only way that I can be
+                <br>Until you're in my arms again
+                <br>Remember me
+                <br>——《Coco》
+            </p>
+        </div>
 
-        <div class="function">
-            <div>I want to remember</div>
-            <div>
-            <input type="text" placeholder="First name">
-            <input type="text" placeholder="Last name">
+        <div class="box">
+            <div class="function">
+                <div>I want to remember</div>
+                <div>
+                    <input type="text" placeholder="First name">
+                    <input type="text" placeholder="Last name">
+                    <button>Build their Memorial</button>
+                </div>
+            </div>
+
+            <div class="image-placeholder">
+                <img class="rememberLyricsImg" src="images/Coco_ Remember me by MagzieArt on DeviantArt.jpeg">
+            </div>  
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WrQyPHzzfCA?si=VTc98GjS-O718V6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
 
-        <div class="image-placeholder">
-            <img class="rememberLyricsImg"src="/images/Coco_ Remember me by MagzieArt on DeviantArt.jpeg">
+        <div class="box">
+            <a href="#"><img class="img-photo" src="images/grandma.png"></a>
+            <a href="#"><img class="img-photo" src="images/grandpa.png"></a>
+            <a href="#"><img class="img-photo" src="images/Tim Burton dogs.jpeg"></a>
+            <a href="#"><img class="img-photo" src="images/chachamaru.jpeg"></a>
+            <a href="#"><img class="img-photo" src="images/mother.png"></a>
+            <a href="#"><img class="img-photo" src="images/father.png"></a>
         </div>
+
     </main>
 
-    <footer>
-        <div class="footer">
-            <div class="footer-text">
-                <p>Remember Me</p>
-                <p>© 2020 Remember Me. All rights reserved.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.facebook.com/"><img src="/facebook.png" alt="facebook"></a>
-                <a href="https://www.instagram.com/"><img src="/instagram.png" alt="instagram"></a>
-                <a href="https://www.twitter.com/"><img src="/twitter.png" alt="twitter"></a>
-            </div>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Remember Me</p>
+            <p>© 2020 Remember Me. All rights reserved.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://www.facebook.com/"><img src="/facebook.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/"><img src="/instagram.png" alt="instagram"></a>
+            <a href="https://www.twitter.com/"><img src="/twitter.png" alt="twitter"></a>
         </div>
     </footer>
+
 </body>
+
 </html>
