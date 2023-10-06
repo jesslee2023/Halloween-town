@@ -1,3 +1,63 @@
+
+@keyframes pseudoRandomMove {
+    0%, 100% {
+        top: 10%;
+        left: 5%;
+    }
+    20% {
+        top: 80%;
+        left: 10%;
+    }
+    40% {
+        top: 40%;
+        left: 90%;
+    }
+    60% {
+        top: 70%;
+        left: 50%;
+    }
+    80% {
+        top: 20%;
+        left: 80%;
+    }
+}
+
+@keyframes disappear {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes reappear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 body {
     background-image: url(images/wallpaper.png);
     background-attachment: fixed;
@@ -39,10 +99,14 @@ body {
     color: lightblue;
 }
 
-.navbar--transparent .home img {
+.navbar--transparent .home-icon img {
     height: 50px;  
     width: auto;
     margin-right: 10px;
+}
+
+.home-icon:hover {
+    animation: fadeInOut 1s infinite; 
 }
 
 .text--clipping {
@@ -84,11 +148,51 @@ body {
     margin-right: 10px;
 }
 
-img {
-    width: 200px; 
-    height: 200px;
+.img {
+    width: 150px; 
+    height: 150px;
     object-fit: cover;
     display: block;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 200px;
+}
+
+.gallery--left .gallery--right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+.left {
+    grid-column: 1;
+    z-index: 1;
+    transform: translateX(50px) translateY(-50px);
+}
+
+.middle {
+    grid-column: 2;
+    z-index: 0;
+    transform: translateX(70px) translateY(-50px);
+}
+.right {
+    grid-column: 3;
+    z-index: 1;
+    transform: translateX(-70px) translateY(-50px);
+}
+
+.slider {
+    width: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slider__item {
+    display: flex;
+    animation: slide 10s linear infinite;
 }
 .video-container {
     margin: 20px 0;
@@ -101,7 +205,26 @@ img {
     gap: 20px; 
 }
 
+
+
+.ghost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: pseudoRandomMove 20s infinite, reappear 3s 0.2s forwards;
+    opacity: 1;
+}
+
+.ghost:hover {
+    animation: disappear 0.2s forwards;
+}
+
 .footer {
     text-align: center;
     margin-top: 50px;
+}
+
+.footer__text {
+    color: white;
+    font-size: 1em;
 }
