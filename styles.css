@@ -80,6 +80,11 @@
     }
 }
 
+@keyframes dripping {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
 body {
     background-image: url(images/backgroundjack.jpg);
     background-attachment: fixed;
@@ -130,6 +135,7 @@ body {
 .home-icon:hover {
     animation: fadeInOut 1s infinite; 
 }
+
 .navbar--transparent__dropdown {
     visibility: hidden;
     position: absolute;
@@ -143,7 +149,7 @@ body {
 }
 
 .navbar--transparent__link {
-    display: block;
+    display: inline-block;
     padding: 1rem 0;
 }
 
@@ -165,7 +171,8 @@ body {
 .text--clipping span {
     display: inline-block;
     transform-origin: center center;
-    text-shadow: darkorchid 0 0 10px;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
 }
 
 .text--clipping span:nth-child(1) { transform: rotate(-20deg); background-color: white;}
@@ -198,13 +205,13 @@ body {
     width: 150px; 
     height: 150px;
     object-fit: cover;
-    display: block;
+    display: block;;
 }
 
 .gallery {
     display: flex;
     justify-content: space-around;
-    gap: 200px;
+    gap: 500px;
 }
 
 .gallery--left .gallery--right {
@@ -216,18 +223,14 @@ body {
 .left {
     grid-column: 1;
     z-index: 1;
-    transform: translateX(50px) translateY(-50px);
+    transform: translateX(50px);
+    
 }
 
-.middle {
-    grid-column: 2;
-    z-index: 0;
-    transform: translateX(50px) translateY(-50px);
-}
 .right {
     grid-column: 3;
     z-index: 1;
-    transform: translateX(-70px) translateY(-50px);
+    transform: translateX(-70px); 
 }
 
 .slider {
@@ -255,14 +258,49 @@ body {
 
 .links--item {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
+    position: relative;
+    overflow: visible;
+    padding: 10px; 
+    background-color: #f70d0d;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    /*   */
+    box-shadow: 
+        3px 0 0 , 
+        -3px 0 0 #6e1010, 
+        0 3px 0 #6e1010, 
+        0 -3px 0 #6e1010, 
+        2px 2px 0 #6e1010, 
+        -2px -2px 0 #6e1010, 
+        2px -2px 0 #6e1010, 
+        -2px 2px 0 ;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.links--item:before,
+.links--item:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.links--item:before {
+    width: 2px;
+    height: 20px;
+    left: 20%;
+    animation: dripping 2s infinite;
+}
+
+.links--item:after {
+    width: 8px;
+    height: 20px;
+    right: 20%;
+    animation: dripping 1s infinite alternate-reverse;
 }
 
 .links--item:hover {
