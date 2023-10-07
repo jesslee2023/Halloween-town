@@ -233,15 +233,27 @@ body {
     transform: translateX(-70px); 
 }
 
+/* .img-horror {
+    border: 5px solid orange;
+    box-shadow: 0 0 10px orange;
+} */
+
 .slider {
     width: 600px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .slider__item {
     display: flex;
     animation: slide 10s linear infinite;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img--costume {
+    border: 5px solid orange;
+    box-shadow: 0 0 10px orange;
 }
 
 .video-container {
