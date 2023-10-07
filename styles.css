@@ -132,7 +132,7 @@ body {
     left: 31%;
     top: 100%;
     padding: 0.5rem;
-    width: 100px;
+    width: auto;
     gap: 1rem;
 }
 
@@ -206,6 +206,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     position: relative;
+    overflow: hidden;
 }
 
 .left {
@@ -217,14 +218,21 @@ body {
 
 .right {
     grid-column: 2;
-    z-index: 1;
+    z-index: 1; 
     transform: translateX(-70px); 
 }
 
-/* .img-horror {
-    border: 5px solid orange;
-    box-shadow: 0 0 10px orange;
-} */
+.img-gallery {
+    display: block;
+    position: relative;
+    padding: 10px;
+    transition: clip-path 0.3s ease-in-out;
+    clip-path: circle(20% at 50% 50%);
+}
+
+.img-gallery:hover {
+    clip-path: circle(42% at 50% 50%);
+}
 
 .slider {
     width: 600px;
@@ -253,7 +261,7 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .links--item {
