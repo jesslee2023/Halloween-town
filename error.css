@@ -28,13 +28,11 @@ body {
 }
 
 .container__title {
-    font-size: 6rem;
-    margin-top: 40px;
+    font-size: 3rem;
 }
 
 .container__subtitle {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
     max-width: 400px;
 }
 
@@ -46,8 +44,38 @@ body {
     max-width: 400px;
 }
 
+details > summary {
+    list-style: none;
+}
+
+details > summary {
+    cursor: pointer;
+}
+
+details > summary::before {
+    content: '▶';
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+
+details[open] > summary::before {
+    content: '▼';
+}
+
+
+.accordion__content {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+
+
 .container__link {
-    color: aliceblue;
+    font-size: 1.5rem;
+    color: rgb(108, 22, 145);
     text-decoration: none;
 }
 

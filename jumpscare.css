@@ -5,20 +5,57 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #000;
+    position: relative;
 }
 
-.jumps-scare {
+.jumps-scare, .message {
     font-size: 5em;
     color: #FFF;
     opacity: 0;
-    transform: scale(0.5);
-    transition: opacity 0.2s, transform 0.2s;
-    animation: jumpScare 3s forwards 5s;  /* Starts after 5 seconds */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-@keyframes jumpScare {
+.jumps-scare {
+    transform: translate(-50%, -50%) scale(0.5);
+    animation: showBoo 2s 2s forwards, flicker 3s 4s forwards, fadeOut 0.1s 7s forwards; /* 2s delay before showing boo, 3s duration for flickering after showing, fade out quickly after flicker */
+}
+
+@keyframes showBoo {
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes flicker {
+    0%, 33%, 66% {
+        opacity: 1;
+        filter: none;
+    }
+    16%, 49%, 82% {
+        opacity: 0.5;
+        filter: blur(1px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.message {
+    animation: showMessage 1s forwards 8s; /* Display after 8 seconds (2 + 2 + 3 + 1) */
+}
+
+@keyframes showMessage {
+    to {
+        opacity: 1;
     }
 }
